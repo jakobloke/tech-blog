@@ -8,10 +8,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-const helpers = require('./utils/helpers');
+const addDate = require('./utils/date');
 
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({helpers});
+const hbs = exphbs.create({addDate});
 
 const session = require('express-session');
 const app = express();
