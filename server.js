@@ -3,10 +3,10 @@ const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const path = require('path');
 
-const addDate = require('./utils/date');
+const helpers = require('./utils/date');
 
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({ addDate });
+const hbs = exphbs.create({ helpers });
 
 const session = require('express-session');
 const app = express();
